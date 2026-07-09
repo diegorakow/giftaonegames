@@ -1,0 +1,260 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;0,14..32,900;1,14..32,400&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+
+@layer base {
+  :root {
+    /* Gaming Dark Theme */
+    --background: 220 20% 6%;
+    --foreground: 0 0% 98%;
+
+    --card: 220 18% 10%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 220 18% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Neon Green Primary */
+    --primary: 150 100% 50%;
+    --primary-foreground: 220 20% 6%;
+
+    /* Cool Blue Secondary */
+    --secondary: 220 60% 50%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 220 15% 15%;
+    --muted-foreground: 220 10% 60%;
+
+    /* Purple Accent */
+    --accent: 270 80% 60%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 80% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 15% 18%;
+    --input: 220 15% 15%;
+    --ring: 150 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom Colors */
+    --neon-green: 150 100% 50%;
+    --neon-blue: 200 100% 60%;
+    --neon-purple: 270 80% 60%;
+    --neon-pink: 330 100% 60%;
+    
+    /* Platform Colors */
+    --psn-blue: 220 80% 55%;
+    --xbox-green: 120 60% 45%;
+    --steam-dark: 220 20% 20%;
+    --gamepass-green: 150 70% 45%;
+    --nintendo-red: 0 70% 50%;
+
+    /* Gradients */
+    --gradient-gaming: linear-gradient(135deg, hsl(150 100% 50% / 0.2) 0%, hsl(200 100% 60% / 0.2) 50%, hsl(270 80% 60% / 0.2) 100%);
+    --gradient-neon: linear-gradient(90deg, hsl(150 100% 50%) 0%, hsl(200 100% 60%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(220 20% 6%) 0%, hsl(220 25% 12%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(220 18% 12%) 0%, hsl(220 18% 8%) 100%);
+
+    /* Shadows */
+    --shadow-neon: 0 0 20px hsl(150 100% 50% / 0.3), 0 0 40px hsl(150 100% 50% / 0.1);
+    --shadow-card: 0 4px 24px hsl(0 0% 0% / 0.4);
+    --shadow-glow: 0 0 30px hsl(150 100% 50% / 0.4);
+
+    --sidebar-background: 220 18% 8%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 150 100% 50%;
+    --sidebar-primary-foreground: 220 20% 6%;
+    --sidebar-accent: 220 15% 15%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 220 15% 18%;
+    --sidebar-ring: 150 100% 50%;
+  }
+
+  .dark {
+    --background: 220 20% 6%;
+    --foreground: 0 0% 98%;
+    --card: 220 18% 10%;
+    --card-foreground: 0 0% 98%;
+    --popover: 220 18% 10%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 150 100% 50%;
+    --primary-foreground: 220 20% 6%;
+    --secondary: 220 60% 50%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 220 15% 15%;
+    --muted-foreground: 220 10% 60%;
+    --accent: 270 80% 60%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 80% 50%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 15% 18%;
+    --input: 220 15% 15%;
+    --ring: 150 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* Orbitron apenas para título de marca e hero */
+  h1, .font-display {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    line-height: 1.15;
+  }
+
+  /* Títulos de seção: Inter bold, mais limpo e legível */
+  h2 {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+  }
+
+  /* Subtítulos e cards: Inter semibold */
+  h3 {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+  }
+
+  h4, h5, h6 {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    line-height: 1.4;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-xl border border-border/50 rounded-xl;
+    box-shadow: var(--shadow-card);
+  }
+
+  .neon-border {
+    @apply border border-primary/30;
+    box-shadow: var(--shadow-neon);
+  }
+
+  .neon-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .gradient-gaming {
+    background: var(--gradient-gaming);
+  }
+
+  .gradient-neon {
+    background: var(--gradient-neon);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-neon);
+  }
+
+  .platform-psn {
+    @apply bg-[hsl(var(--psn-blue))];
+  }
+
+  .platform-xbox {
+    @apply bg-[hsl(var(--xbox-green))];
+  }
+
+  .platform-steam {
+    @apply bg-[hsl(var(--steam-dark))];
+  }
+
+  .platform-gamepass {
+    @apply bg-[hsl(var(--gamepass-green))];
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.5s ease-out;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.3s ease-out;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(150 100% 50% / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(150 100% 50% / 0.5);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

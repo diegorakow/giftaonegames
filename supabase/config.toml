@@ -1,0 +1,13 @@
+project_id = "aigvxrodcusndtxqrwhy"
+
+[functions.redeem-code]
+verify_jwt = false
+
+[functions.create-checkout]
+verify_jwt = false
+
+[functions.stripe-webhook]
+verify_jwt = false
+
+[functions.cleanup-orders]
+verify_jwt = false
