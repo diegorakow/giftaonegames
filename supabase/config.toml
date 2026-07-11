@@ -1,4 +1,4 @@
-project_id = "aigvxrodcusndtxqrwhy"
+project_id = "pfmwtbyqjuadmukiuyjy"
 
 [functions.redeem-code]
 verify_jwt = false
