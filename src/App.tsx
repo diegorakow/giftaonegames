@@ -64,6 +64,7 @@ const AppContent = () => {
       <Route path="/produto/:id" element={<Product />} />
       <Route path="/carrinho" element={<Cart />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/~oauth/initiate" element={<Navigate to="/login" replace />} />
       <Route path="/verify-email" element={<VerifyEmail />} />
       <Route path="/auth/callback" element={<AuthCallback />} />
       <Route path="/checkout" element={<Checkout />} />
